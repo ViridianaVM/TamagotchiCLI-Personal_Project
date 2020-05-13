@@ -40,5 +40,10 @@ namespace TamagotchiPractice
                 }
             }
         }
+
+        public int getCalories()
+        {
+            return m_kalories;
+        }
     }
 }

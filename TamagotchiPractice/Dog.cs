@@ -16,7 +16,11 @@ namespace TamagotchiPractice
         //private Timer timer = new System.Timers.Timer();
         private Stopwatch m_stopwatch;
         private DateTime m_dob;
-        private int m_dinnerAmounts;
+        private int m_totalKalories;
+        private Food chocolateMeal = new Food(Food.FoodKind.CHOCOLATE);
+        private Food cheeseMeal = new Food(Food.FoodKind.CHEESE);
+        private Food veggiesMeal = new Food(Food.FoodKind.VEGGIES);
+        private Food meatMeal = new Food(Food.FoodKind.MEAT);
 
         public Dog(String name)
         {
@@ -77,11 +81,58 @@ namespace TamagotchiPractice
             m_stopwatch.Reset();
         }
 
-        public void Eat()
+        public void EatChocolate(Food chocolateMeal)
         {
-            //Food newMeal = new Food(Food.FoodKind.CHOCOLATE);
-
-
+            m_totalKalories = m_totalKalories + chocolateMeal.getCalories();
+            if (m_totalKalories < 350)
+            {
+                Console.WriteLine("Thanks for the chocolate but I am still hungry. I will need to eat more later!");
+            }
+            else
+            {
+                Console.WriteLine("Thanks for the chocolate! I am so full that I don't need to ear for the rest of the day");
+            }
         }
+
+        public void EatCheese(Food cheeseMeal)
+        {
+            m_totalKalories = m_totalKalories + cheeseMeal.getCalories();
+            if (m_totalKalories < 350)
+            {
+                Console.WriteLine("Thanks for the cheese but I am still hungry. I will need to eat more later!");
+            }
+            else
+            {
+                Console.WriteLine("Thanks for the cheese! I am so full that I don't need to ear for the rest of the day");
+            }
+        }
+
+        public void EatVeggies(Food veggiesMeal)
+        {
+            m_totalKalories = m_totalKalories + veggiesMeal.getCalories();
+            if (m_totalKalories < 350)
+            {
+                Console.WriteLine("Thanks for the veggies but I am still hungry. I will need to eat more later!");
+            }
+            else
+            {
+                Console.WriteLine("Thanks for the veggies! I am so full that I don't need to ear for the rest of the day");
+            }
+        }
+
+        public void EatMeat(Food meatMeal)
+        {
+            m_totalKalories = m_totalKalories + meatMeal.getCalories();
+            if (m_totalKalories < 350)
+            {
+                Console.WriteLine("Thanks for the meat but I am still hungry. I will need to eat more later!");
+            }
+            else
+            {
+                Console.WriteLine("Thanks for the meat! I am so full that I don't need to ear for the rest of the day");
+            }
+        }
+
+
     }
 }
