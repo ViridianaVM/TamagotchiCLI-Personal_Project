@@ -16,7 +16,7 @@ namespace TamagotchiPractice
         //private Timer timer = new System.Timers.Timer();
         private Stopwatch m_stopwatch;
         private DateTime m_dob;
-        private int m_totalKalories;
+        public int m_totalKalories;
         private Food chocolateMeal = new Food(Food.FoodKind.CHOCOLATE);
         private Food cheeseMeal = new Food(Food.FoodKind.CHEESE);
         private Food veggiesMeal = new Food(Food.FoodKind.VEGGIES);
@@ -56,15 +56,33 @@ namespace TamagotchiPractice
             return (int)Math.Round(totalDays);
         }
 
+        public int getKalories()
+        {
+            return m_totalKalories;
+        }
+
         public void Bark()
         {
             Console.WriteLine("Woof Woof");
         }
 
-
+        /// <summary>
+        /// PLAYING FUNCTIONS
+        /// </summary>
         public void Play()
         {
-            m_stopwatch.Start();
+            if (m_totalKalories < 50)
+            {
+                Console.WriteLine("Sorry! I am not string enough to play right now! I need more energy or go to sleep.");
+            }
+            else
+            {
+                //Right now will rest just 50 kal. But it should rest the kalories according to the time playing
+                m_totalKalories -= 50;
+                m_stopwatch.Start();
+                Console.WriteLine(m_name + " has started to play!");
+            }
+            
         }
 
         public void StopPlaying()
@@ -79,7 +97,13 @@ namespace TamagotchiPractice
                 ts.Milliseconds / 10);
             Console.WriteLine("Time Playing " + elapsedTime);
             m_stopwatch.Reset();
+            Console.WriteLine(m_name + " just stoped playing.");
         }
+
+
+        /// <summary>
+        /// EATING FUNCTIONS
+        /// </summary>
 
         public void EatChocolate(Food chocolateMeal)
         {
@@ -133,6 +157,36 @@ namespace TamagotchiPractice
             }
         }
 
+
+        /// <summary>
+        /// SLEEPING FUNCTION
+        /// </summary>
+        /// 
+        public void Sleep()
+        {
+            Console.WriteLine("I'll go and rest. Thanks");
+            m_totalKalories += 50;
+        }
+
+
+        /// <summary>
+        /// WALKING FUNCTION
+        /// </summary>
+        /// 
+        public void Walk()
+        {
+            if (m_totalKalories < 50)
+            {
+                Console.WriteLine("Sorry. I don't have enough energy to walk. I need to eat or reast");
+            }
+            else
+            {
+                m_totalKalories -= 50;
+                Console.WriteLine("Woof! I am super excited to walk with you!");
+            }
+            
+            m_totalKalories += 50;
+        }
 
     }
 }
