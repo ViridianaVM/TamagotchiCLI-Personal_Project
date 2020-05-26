@@ -31,7 +31,7 @@ namespace TamagotchiPractice
         static void displayMenu()
         {
             Console.WriteLine("Welcome Back! What do you want to do now?");
-            Console.WriteLine("1. Feed my Tamagotchi" + "\n" + "2. Play with my Tamagotchi" + "\n" + "3. Take my Tamagotchi to a walk" + "\n" + "4. Put my Tamagotchi to sleep" + "\n" + "5. Exit");
+            Console.WriteLine("1. Feed my Tamagotchi" + "\n" + "2. Play with my Tamagotchi" + "\n" + "3. Take my Tamagotchi to a walk" + "\n" + "4. Put my Tamagotchi to sleep" + "\n" + "5. Display my info" + "\n" + "6. Exit");
             userAction = Console.ReadLine();
             uAction = Convert.ToInt32(userAction);
             Console.Clear();
@@ -115,7 +115,14 @@ namespace TamagotchiPractice
                         SaveInfo();
                         break;
                     }
-                case 5: //Exit
+
+                case 5: //Display Info
+                    {
+                        cachito.DisplayInfo();
+                        Console.ReadLine();
+                        break;
+                    }
+                case 6: //Exit
                     {
                         //SaveInfo();
                         Console.Clear();

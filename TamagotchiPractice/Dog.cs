@@ -178,6 +178,18 @@ namespace TamagotchiPractice
             
         }
 
+        public void DisplayInfo()
+        {
+            Console.WriteLine("                               __                ||");
+            Console.WriteLine("            ,               , \" e`--o            ||");
+            Console.WriteLine("           ((              (  | __,-'            ||  My name is " + Name + ".");
+            Console.WriteLine("            \\\\~------------'\\_;/                 ||  I am " + getAge() + " days old.");
+            Console.WriteLine("            (                  /                 ||  My total kalories so far:" + m_totalKalories);
+            Console.WriteLine("            /).____________.  )                  ||");
+            Console.WriteLine("           (( (           (( (                   ||");
+            Console.WriteLine("            ``-'           ``-'                  ||");
+        }
+
 
         //CREAR UNA FUNCION QUE SE LLAME TOSTRING
         //SE MANDA A LLAMAR CUANDO HAGA DISPLAYINFO PARA MOSTRAR EL ASCCII DEL PERRITO Y TODA SU INFO
