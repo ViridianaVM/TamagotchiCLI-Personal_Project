@@ -1,6 +1,6 @@
 # TamagotchiPractice
 
-This project simulates a Tamagotchi.
+I created this project with the purpose to practice C# and Object Oriented Programming. 
 
 A Tamagotchi can eat, play and sleep. The user can decide which activity wants to do with the Tamagotchi.
 
